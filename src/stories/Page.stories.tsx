@@ -1,14 +1,17 @@
-// import React from 'react';
-
+import { ComponentMeta } from '@storybook/react';
 import { Title } from '../pages/index';
 
+type Args = { title: string };
+
 export default {
-  /* 👇 The title prop is optional.
-  * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
-  * to learn how to generate automatic titles
-  */
   title: 'Title',
   component: Title,
-};
+  argTypes: {
+    title: { type: 'string' },
+  },
+  args: {
+    title: 'Some Text',
+  },
+} as ComponentMeta<typeof Title>;
 
-export const Component = () => <Title>Some Title</Title>;
+export const Component = ({ title }: Args) => <Title>{ title }</Title>;

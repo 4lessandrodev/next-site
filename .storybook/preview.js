@@ -1,6 +1,4 @@
 import { theme } from '../src/styles/theme';
-
-import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 export const decorators = [
